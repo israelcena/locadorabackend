@@ -3,7 +3,7 @@ package com.israelcena.locadorabackend.cliente.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/healthcheck")
+@RequestMapping("/cliente/healthcheck")
 @RestController
 public class HealthCheck {
 
