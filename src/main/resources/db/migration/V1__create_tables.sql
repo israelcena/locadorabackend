@@ -1,3 +1,12 @@
+CREATE TABLE cliente
+(
+    id serial PRIMARY KEY,
+    nome varchar(100) NOT NULL,
+    cpf varchar(100) NOT NULL unique,
+    endereco varchar(100) not null,
+    permicao_alugar bool default true
+);
+
 CREATE TABLE filme
 (
     id serial PRIMARY KEY,
@@ -7,15 +16,6 @@ CREATE TABLE filme
     nota float,
     disponibilidade bool DEFAULT TRUE,
     cliente_id integer references cliente(id)
-);
-
-CREATE TABLE cliente
-(
-    id serial PRIMARY KEY,
-    nome varchar(100) NOT NULL,
-    cpf varchar(100) NOT NULL unique,
-    endereco varchar(100) not null,
-    permicao_alugar bool default true
 );
 
 CREATE TABLE cliente_filme (

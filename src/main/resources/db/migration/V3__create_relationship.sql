@@ -1,0 +1,1 @@
+insert into cliente_filme values ((select id from cliente where cpf like '123'), (select id from filme where cliente_id = (select id from cliente where cpf like '123')));
