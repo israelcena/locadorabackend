@@ -1,8 +1,10 @@
 package com.israelcena.locadorabackend.cliente.model;
 
+import com.israelcena.locadorabackend.filmes.model.Filme;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Builder
 @AllArgsConstructor
@@ -25,4 +27,7 @@ public class Cliente {
 
   @Column(nullable = false)
   private Boolean permicao_alugar = true;
+
+  @OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER)
+  private List<Filme> filmes;
 }
