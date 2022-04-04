@@ -1,11 +1,7 @@
 package com.israelcena.locadorabackend.cliente.model;
 
-import com.israelcena.locadorabackend.cliente.dto.ClienteDTO;
 import com.israelcena.locadorabackend.filmes.model.Filme;
 import lombok.*;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.util.List;
 
