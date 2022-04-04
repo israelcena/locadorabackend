@@ -12,7 +12,7 @@ public class ClienteDTO {
 
   private String nome;
   private String cpf;
-  private String endreco;
+  private String endereco;
   private boolean permicao_alugar;
   private List<FilmesDTO> filmes;
 
