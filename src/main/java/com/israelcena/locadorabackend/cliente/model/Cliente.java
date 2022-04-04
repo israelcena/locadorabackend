@@ -25,8 +25,8 @@ public class Cliente {
   @Column(nullable = false)
   private String endereco;
 
-  @Column(nullable = false)
-  private Boolean permicao_alugar = true;
+  @Column(nullable = false, name = "permicao_alugar")
+  private Boolean permicaoAlugar = true;
 
   @OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER)
   private List<Filme> filmes;
