@@ -4,8 +4,8 @@ import com.israelcena.locadorabackend.cliente.model.Cliente;
 import com.israelcena.locadorabackend.cliente.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 @Service
@@ -17,8 +17,6 @@ public class FindClienteService {
   public List<Cliente> listarTodosOsClientes() {
     List<Cliente> todosClientes = clienteRepository.findAll();
     return todosClientes.stream().collect(Collectors.toList());
-
   }
-
 
 }
