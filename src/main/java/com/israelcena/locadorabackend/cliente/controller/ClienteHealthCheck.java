@@ -7,15 +7,10 @@ import java.util.List;
 
 @RequestMapping("/cliente/healthcheck")
 @RestController
-public class HealthCheck {
-
+public class ClienteHealthCheck {
   @GetMapping
   public String healthCheck(){
     return "This Server is Alive !";
   }
 
-  @PostMapping@ResponseStatus(HttpStatus.CREATED)
-  public List<?> healthCheckPost(@RequestBody List<?> body ){
-    return body;
-  }
 }
