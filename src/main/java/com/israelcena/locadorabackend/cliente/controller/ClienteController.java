@@ -2,6 +2,7 @@ package com.israelcena.locadorabackend.cliente.controller;
 
 import com.israelcena.locadorabackend.cliente.dto.ClienteDTO;
 import com.israelcena.locadorabackend.cliente.model.Cliente;
+import com.israelcena.locadorabackend.cliente.service.ChangeClienteService;
 import com.israelcena.locadorabackend.cliente.service.CreateNewClientService;
 import com.israelcena.locadorabackend.cliente.service.DeleteClienteService;
 import com.israelcena.locadorabackend.cliente.service.FindClienteService;
@@ -20,6 +21,7 @@ public class ClienteController {
 
   private final FindClienteService findClienteService;
   private final CreateNewClientService createNewClientService;
+  private final ChangeClienteService changeClienteService;
   private final DeleteClienteService deleteClienteService;
   private final ModelMapper modelMapper;
 
@@ -37,6 +39,12 @@ public class ClienteController {
   public ClienteDTO criarNovoCliente(@RequestBody Cliente cliente) {
     Cliente novoCliente = createNewClientService.criarNovoCliente(cliente);
     return convertCliente(novoCliente);
+  }
+
+  @PutMapping("{cpf}") @ResponseStatus(HttpStatus.CREATED) @ResponseBody
+  public ClienteDTO editarCliente(@PathVariable String cpf, @RequestBody Cliente cliente){
+    Cliente unConvertedCliente = changeClienteService.changeCliente(cpf, cliente);
+    return convertCliente(unConvertedCliente);
   }
 
   @DeleteMapping("{cpf}") @ResponseStatus(HttpStatus.ACCEPTED)
