@@ -35,6 +35,12 @@ public class ClienteController {
     return allClientes.stream().map(this::convertCliente).collect(Collectors.toList());
   }
 
+  @GetMapping("/{cpf}")
+  public ClienteDTO listarUm(@PathVariable String cpf){
+    Cliente cliente = findClienteService.listarUmCliente(cpf);
+    return convertCliente(cliente);
+  }
+
   @PostMapping@ResponseStatus(HttpStatus.CREATED) @ResponseBody
   public ClienteDTO criarNovoCliente(@RequestBody Cliente cliente) {
     Cliente novoCliente = createNewClientService.criarNovoCliente(cliente);

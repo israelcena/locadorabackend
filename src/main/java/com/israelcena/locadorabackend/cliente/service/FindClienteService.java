@@ -19,4 +19,8 @@ public class FindClienteService {
     return todosClientes.stream().collect(Collectors.toList());
   }
 
+  public Cliente listarUmCliente(String cpf){
+    return clienteRepository.findByCpf(cpf).orElse(null);
+  }
+
 }
